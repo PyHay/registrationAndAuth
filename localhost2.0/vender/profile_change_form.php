@@ -1,4 +1,9 @@
-
+<?php
+session_start();
+if(!$_SESSION['user']){
+  header('Location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +12,7 @@
 </head>
 <body>
   <form action="profile_change_function.php?id=<?php echo $_GET['id'] ?>" method="POST">
-  <input type="text" name="name" placeholder="Новое имя">
+  <input type="text" name="name" placeholder="Новое имя(ФИО)">
   <input type="password" name="password" placeholder="Новый пароль">
   <input type="submit" value="Готово">
   </form>

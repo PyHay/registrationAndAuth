@@ -3,8 +3,8 @@
 	session_start();
 	require_once 'connect.php';
 
-	$login = $_POST['login'];
-	$password = md5($_POST['password']);
+	$login = mysqli_real_escape_string($connect, $_POST['login']);
+	$password = mysqli_real_escape_string($connect, md5($_POST['password']));
 
 	$check_user = mysqli_query($connect, "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
 		echo mysqli_error($connect);

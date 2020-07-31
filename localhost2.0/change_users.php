@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!$_SESSION['user']){
+  header('Location: index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +25,12 @@
   ?>
 
 </form>
-
+<a href="index.php" style="padding:0;"><button style="margin-top:10px">Мой профиль</button></a>
+<?php
+if($_SESSION['message']){
+echo '<p class="msg" style="margin-top:10px;">' . $_SESSION['message'] . ' </p>';
+}
+unset($_SESSION['message']);
+?>
 </body>
 </html>

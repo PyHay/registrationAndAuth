@@ -43,8 +43,8 @@ p{
 	text-align: center;
 }
 
-div{
-	display: flex;
-	flex-direction: column;
-	width: 1000px;
+a{
+	text-decoration: none;
+	color:#62ACCC;
+	padding: 5px;
 }
